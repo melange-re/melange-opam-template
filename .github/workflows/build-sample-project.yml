@@ -38,3 +38,8 @@ jobs:
 
       - name: Bundle JS app
         run: npm run bundle
+
+      - name: Run resulting .js files
+        run: |
+          node _build/default/src/Hello.bs.js
+          node _build/default/src/Main.bs.js
