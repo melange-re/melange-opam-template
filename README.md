@@ -1,6 +1,9 @@
 # melange-opam-template
 
-A simple project template using [Melange](https://github.com/melange-re/melange).
+A simple project template using [Melange](https://github.com/melange-re/melange)
+with [opam](https://opam.ocaml.org/).
+
+If you are looking for a template with esy, check [melange-basic-template](https://github.com/melange-re/melange-basic-template).
 
 ## Quick Start
 
