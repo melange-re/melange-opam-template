@@ -1,0 +1,40 @@
+on:
+  pull_request:
+  push:
+   branches:
+     - master
+  schedule:
+    # Prime the caches every Monday
+    - cron: 0 1 * * MON
+
+jobs:
+  build-sample-project:
+    name: Build sample project
+    strategy:
+      matrix:
+        system: [windows-latest, ubuntu-latest, macos-latest]
+        ocaml-compiler:
+          - 4.14.x
+
+      fail-fast: false
+    runs-on: ${{ matrix.system }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: current
+
+      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - name: Install all deps
+        run: make install
+
+      - name: Build basic template
+        run: opam exec -- mel
+
+      - name: Bundle JS app
+        run: npm run bundle

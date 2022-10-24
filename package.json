@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "bundle": "webpack --mode production --entry ./_build/default/src/ReactApp.bs.js",
+    "serve": "webpack serve --open --mode development --entry ./_build/default/src/ReactApp.bs.js"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.1"
+  }
+}
