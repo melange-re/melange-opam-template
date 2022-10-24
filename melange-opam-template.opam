@@ -26,3 +26,6 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/melange-re/melange-opam-template.git"
+pin-depends: [
+  [ "melange.dev" "git+https://github.com/melange-re/melange.git#bc7549a32516a9d1be6d307f2cb1bf6a3acfd6dd" ]
+]
