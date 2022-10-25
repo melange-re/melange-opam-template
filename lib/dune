@@ -1,0 +1,3 @@
+(library
+ (name my_lib)
+ (modes melange))

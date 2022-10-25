@@ -1,0 +1,7 @@
+(subdir
+ node_modules
+ (vendored_dirs reason-react)
+ (dirs reason-react)
+ (subdir
+  reason-react
+  (dirs src)))

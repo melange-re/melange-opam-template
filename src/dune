@@ -1,0 +1,4 @@
+(library
+ (name main)
+ (modes melange)
+ (libraries reason_react my_lib2))
