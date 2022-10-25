@@ -9,7 +9,7 @@ bug-reports: "https://github.com/your/project/issues"
 depends: [
   "ocaml" {>= "4.14.0" & < "5.0.0"}
   "dune" {>= "3.5"}
-  "melange" {dev}
+  "mel" {= "0.2.0"}
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
   "odoc" {with-doc}
@@ -29,6 +29,3 @@ build: [
   ]
 ]
 dev-repo: "git+https://github.com/your/project.git"
-pin-depends: [
-  [ "melange.dev" "git+https://github.com/melange-re/melange.git#bc7549a32516a9d1be6d307f2cb1bf6a3acfd6dd" ]
-]

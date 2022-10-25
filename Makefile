@@ -14,7 +14,7 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . -y --deps-only --locked
+	opam switch create . -y --deps-only
 
 .PHONY: init
 init: create-switch install ## Configure everything to develop this repository in local
@@ -22,8 +22,7 @@ init: create-switch install ## Configure everything to develop this repository i
 .PHONY: install
 install: ## Install development dependencies
 	npm install
-	opam install -y . --deps-only --with-test
-	opam pin -y add $(project_name).dev .
+	opam install -y . --deps-only
 	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
 
 .PHONY: build
