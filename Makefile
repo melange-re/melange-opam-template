@@ -31,7 +31,7 @@ build: ## Build the project
 
 .PHONY: serve
 serve: ## Serve the application with a local HTTP server
-	npm run server
+	npm run serve
 
 .PHONY: bundle
 bundle: ## Bundle the JavaScript application
