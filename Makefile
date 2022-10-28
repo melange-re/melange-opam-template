@@ -27,11 +27,11 @@ install: ## Install development dependencies
 
 .PHONY: build
 build: ## Build the project
-	$(DUNE) build src/.main.objs/melange/main.js
+	$(DUNE) build output/src/main.js
 
 .PHONY: build_verbose
 build_verbose: ## Build the project
-	$(DUNE) build --verbose src/.main.objs/melange/main.js
+	$(DUNE) build --verbose output/src/main.js
 
 .PHONY: serve
 serve: ## Serve the application with a local HTTP server

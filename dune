@@ -5,3 +5,5 @@
  (subdir
   reason-react
   (dirs src)))
+
+(melange.emit (target output) (libraries main) (spec es6))
