@@ -51,4 +51,4 @@ format-check: ## Checks if format is correct
 
 .PHONY: watch
 watch: ## Watch for the filesystem and rebuild on every change
-	$(MEL) build --watch
+	$(DUNE) build @mel --watch
