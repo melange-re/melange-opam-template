@@ -23,6 +23,7 @@ init: create-switch install ## Configure everything to develop this repository i
 install: ## Install development dependencies
 	npm install
 	opam install -y . --deps-only
+	opam pin -y add $(project_name).dev .
 	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
 
 .PHONY: build
@@ -51,4 +52,4 @@ format-check: ## Checks if format is correct
 
 .PHONY: watch
 watch: ## Watch for the filesystem and rebuild on every change
-	$(DUNE) build @mel --watch
+	$(MEL) build --watch
