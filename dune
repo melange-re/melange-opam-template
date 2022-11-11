@@ -6,4 +6,8 @@
   reason-react
   (dirs src)))
 
-(melange.emit (target output) (libraries main) (spec es6))
+(melange.emit
+ (target output)
+ (entries hello main)
+ (libraries my_lib reason_react my_lib2)
+ (module_system es6))
