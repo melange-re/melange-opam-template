@@ -5,14 +5,14 @@
 (generate_opam_files true)
 
 (name melange-opam-template)
+
 (license "MIT")
 
 (package
+ (allow_empty)
  (name melange-opam-template)
-
-(synopsis "Melange project")
-(description "Minimal melange project")
-
+ (synopsis "Melange project")
+ (description "Minimal melange project")
  (depends
   (ocaml
    (and
@@ -22,4 +22,3 @@
   melange
   (ocaml-lsp-server :dev)
   (dot-merlin-reader :dev)))
-
