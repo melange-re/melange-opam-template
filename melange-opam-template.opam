@@ -2,10 +2,15 @@
 opam-version: "2.0"
 synopsis: "Melange project"
 description: "Minimal melange project"
+maintainer: ["<your_name>"]
+authors: ["<your_name>"]
 license: "MIT"
+homepage: "https://github.com/your/project"
+bug-reports: "https://github.com/your/project/issues"
 depends: [
   "dune" {>= "3.1"}
   "ocaml" {>= "4.14.0" & < "4.15.0"}
+  "reason" {>= "3.8.2" & < "4.0.0"}
   "mel"
   "melange"
   "ocaml-lsp-server" {dev}
