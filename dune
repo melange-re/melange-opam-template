@@ -10,5 +10,6 @@
  (target output)
  (alias main)
  (entries hello main)
- (libraries my_lib reason_react my_lib2)
+ (compile_flags :standard -bs-jsx 3)
+ (libraries reactApp my_lib reason_react my_lib2)
  (module_system es6))

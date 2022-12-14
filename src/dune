@@ -1,4 +1,5 @@
 (library
- (name main)
+ (name reactApp)
  (modes melange)
+ (melange.compile_flags :standard -bs-jsx 3)
  (libraries reason_react my_lib2))

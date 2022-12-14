@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "bundle": "webpack --mode production --entry ./_build/default/src/.main.objs/byte/main.js",
-    "serve": "webpack serve --open --mode development --entry ./_build/default/src/.main.objs/byte/main.js",
+    "bundle": "webpack --mode production --entry ./_build/default/output/Main.js",
+    "serve": "webpack serve --open --mode development --entry ./_build/default/output/Main.js",
     "postinstall": "patch-package"
   },
   "dependencies": {
