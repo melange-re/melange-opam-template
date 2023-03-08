@@ -21,9 +21,11 @@ init: create-switch install ## Configure everything to develop this repository i
 .PHONY: install
 install: ## Install development dependencies
 	npm install
+	opam update
 	opam install -y . --deps-only
 	opam pin -y add $(project_name).dev .
-	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
+	rm -rf node_modules/melange.runtime && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange.runtime
+	rm -rf node_modules/melange.belt && ln -sfn $$(opam var melange:lib)/belt node_modules/melange.belt
 
 .PHONY: build
 build: ## Build the project

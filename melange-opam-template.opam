@@ -11,7 +11,6 @@ depends: [
   "reason" {>= "3.8.1" & < "4.0.0"}
   "dune" {dev}
   "melange-compiler-libs" {dev}
-  "meldep" {dev}
   "melange" {dev}
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
@@ -19,8 +18,7 @@ depends: [
 ]
 dev-repo: "git+https://github.com/your/project.git"
 pin-depends: [
-  [ "dune.dev" "git+https://github.com/ocaml/dune.git#70e0c6579de48ea10d69fbca04e7026e61c21f52" ]
-  [ "melange-compiler-libs.dev" "git+https://github.com/melange-re/melange-compiler-libs.git#426463a77d0b70ecf0108c98e6a86d325cd01472" ]
-  [ "meldep.dev" "git+https://github.com/melange-re/melange.git#0be7b2866486f395ba459aae39c64b33bda69475" ]
-  [ "melange.dev" "git+https://github.com/melange-re/melange.git#0be7b2866486f395ba459aae39c64b33bda69475" ]
+  [ "dune.dev" "git+https://github.com/ocaml/dune.git#a0dd51512f269d7c18f0c6216ab66d3ab7368da2" ]
+  [ "melange-compiler-libs.dev" "git+https://github.com/melange-re/melange-compiler-libs.git#48ff923f2c25136de8ab96678f623f54cdac438c" ]
+  [ "melange.dev" "git+https://github.com/melange-re/melange.git#cb1962c15799b2c4045121a280d83600ece3bb59" ]
 ]

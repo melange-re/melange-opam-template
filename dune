@@ -1,7 +1,7 @@
 (subdir
  node_modules
- (vendored_dirs reason-react)
- (dirs reason-react)
+ (vendored_dirs melange.belt reason-react)
+ (dirs melange.belt reason-react)
  (subdir
   reason-react
   (dirs src)))
@@ -11,5 +11,5 @@
  (alias main)
  (entries hello main)
  (compile_flags :standard -bs-jsx 3)
- (libraries reactApp my_lib reason_react my_lib2)
- (module_system es6))
+ (libraries melange.belt my_lib my_lib2 reactApp reason_react)
+ (module_systems (es6 mjs)))
