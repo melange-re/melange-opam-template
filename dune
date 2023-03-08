@@ -12,4 +12,4 @@
  (entries hello main)
  (compile_flags :standard -bs-jsx 3)
  (libraries melange.belt my_lib my_lib2 reactApp reason_react)
- (module_systems (es6 mjs)))
+ (module_systems es6))
