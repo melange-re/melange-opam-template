@@ -1,4 +1,0 @@
-(library
- (name my_lib2)
- (modes melange)
- (libraries my_lib))

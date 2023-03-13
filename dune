@@ -17,8 +17,12 @@
 
 (melange.emit
  (target output)
- (alias main)
- (entries hello main)
- (compile_flags :standard -bs-jsx 3)
- (libraries melange my_lib my_lib2 reactApp reason_react)
+ (alias react)
+ (libraries reactApp)
  (module_systems es6))
+
+(melange.emit
+ (target node)
+ (alias node)
+ (libraries hello_node)
+ (module_systems commonjs))

@@ -1,5 +1,12 @@
 (library
  (name reactApp)
  (modes melange)
+ (modules :standard \ hello)
  (melange.compile_flags :standard -bs-jsx 3)
- (libraries reason_react my_lib2))
+ (libraries melange reason_react world))
+
+(library
+ (name hello_node)
+ (modes melange)
+ (modules hello)
+ (libraries world))

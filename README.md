@@ -38,15 +38,23 @@ change
 Since Melange just compiles source files into JavaScript files, it can be used
 for projects on any JavaScript platform - not just the browser.
 
-All ReasonML/OCaml/ReScript source files under `src/` will be compiled to
-JavaScript and written to `_build/default/src/*` (along with some other build
-artifacts).
+The template includes two `melange.emit` stanza for two separate apps. This
+stanza tells Dune to generate JavaScript files using Melange, and specifies in
+which folder the JavaScript files should be placed, by leverating the `target`
+field:
+- The React app JavaScript files will be placed in `_build/default/output/*`.
+- The NodeJS app JavaScript files will be placed in `_build/default/node/*`.
 
-For example, [`src/Hello.ml`](src/Hello.ml) (using OCaml syntax) and
-[`src/Main.re`](src/Main.re) (using ReasonML syntax) can each be run with
+So for example, [`src/Hello.ml`](src/Hello.ml) (using OCaml syntax) can be run with
 `node`:
 
 ```bash
-node _build/default/src/Hello.bs.js
-node _build/default/src/Main.bs.js
+node _build/default/node/src/Hello.js
+```
+
+Similarly, `_build/default/output/src/ReactApp.js` can be passed as entry to a bundler
+like Webpack:
+
+```bash
+webpack --mode production --entry ./_build/default/output/src/ReactApp.js
 ```
