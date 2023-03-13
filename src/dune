@@ -2,7 +2,7 @@
  (target output)
  (alias react)
  (libraries melange reason_react world)
- (entries :standard \ hello)
+ (modules :standard \ hello)
  (compile_flags :standard -bs-jsx 3)
  (module_systems es6))
 
@@ -10,5 +10,5 @@
  (target node)
  (alias node)
  (libraries world)
- (entries hello)
+ (modules hello)
  (module_systems commonjs))
