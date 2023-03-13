@@ -14,15 +14,3 @@
     (wrapped false)
     (flags :standard -bs-jsx 3)
     (modes melange)))))
-
-(melange.emit
- (target output)
- (alias react)
- (libraries reactApp)
- (module_systems es6))
-
-(melange.emit
- (target node)
- (alias node)
- (libraries hello_node)
- (module_systems commonjs))

@@ -1,12 +1,14 @@
-(library
- (name reactApp)
- (modes melange)
- (modules :standard \ hello)
- (melange.compile_flags :standard -bs-jsx 3)
- (libraries melange reason_react world))
+(melange.emit
+ (target output)
+ (alias react)
+ (libraries melange reason_react world)
+ (entries :standard \ hello)
+ (compile_flags :standard -bs-jsx 3)
+ (module_systems es6))
 
-(library
- (name hello_node)
- (modes melange)
- (modules hello)
- (libraries world))
+(melange.emit
+ (target node)
+ (alias node)
+ (libraries world)
+ (entries hello)
+ (module_systems commonjs))

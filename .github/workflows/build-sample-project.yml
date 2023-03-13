@@ -44,4 +44,4 @@ jobs:
 
       - name: Run Node app
         run: |
-          node _build/default/node/src/Hello.js
+          node _build/default/src/node/src/Hello.js
