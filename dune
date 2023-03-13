@@ -4,7 +4,16 @@
  (dirs reason-react)
  (subdir
   reason-react
-  (dirs src)))
+  (vendored_dirs src)
+  (dirs src)
+  (subdir
+   src
+   (include_subdirs unqualified)
+   (library
+    (name reason_react)
+    (wrapped false)
+    (flags :standard -bs-jsx 3)
+    (modes melange)))))
 
 (melange.emit
  (target output)

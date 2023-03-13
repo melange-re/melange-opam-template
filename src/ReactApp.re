@@ -1,5 +1,3 @@
-open Reason_react;
-
 module App = {
   // This sample forces an import of Belt.*, so that CI builds can ensure that
   // Melange has been installed correctly for JS bundlers to be able to find it.

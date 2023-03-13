@@ -1,6 +1,3 @@
-[@warning "-33"]
-open Reason_react
-
 module App = ReactApp.App;
 
 ReactDOM.querySelector("#root")
