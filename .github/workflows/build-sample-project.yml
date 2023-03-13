@@ -37,7 +37,7 @@ jobs:
         run: make install
 
       - name: Build basic template
-        run: opam exec -- mel
+        run: make build
 
       - name: Bundle React app
         run: npm run bundle
