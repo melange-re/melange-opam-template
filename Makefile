@@ -13,7 +13,7 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . -y --deps-only
+	opam switch create . 4.14.2 -y --deps-only
 
 .PHONY: init
 init: create-switch install ## Configure everything to develop this repository in local
@@ -24,8 +24,6 @@ install: ## Install development dependencies
 	opam update
 	opam install -y . --deps-only
 	opam pin -y add $(project_name).dev .
-	rm -rf node_modules/melange.runtime && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange.runtime
-	rm -rf node_modules/melange.belt && ln -sfn $$(opam var melange:lib)/belt node_modules/melange.belt
 
 .PHONY: build
 build: ## Build the project
