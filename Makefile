@@ -20,7 +20,7 @@ init: create-switch install ## Configure everything to develop this repository i
 
 .PHONY: install
 install: ## Install development dependencies
-	npm install
+	npm install --legacy-peer-deps
 	opam update
 	opam install -y . --deps-only
 	opam pin -y add $(project_name).dev .
