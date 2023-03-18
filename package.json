@@ -1,12 +1,12 @@
 {
   "scripts": {
-    "bundle": "webpack --mode production --entry ./_build/default/src/ReactApp.bs.js",
-    "serve": "webpack serve --open --mode development --entry ./_build/default/src/ReactApp.bs.js"
+    "bundle": "webpack --mode production --entry ./_build/default/src/output/src/ReactApp.js",
+    "serve": "webpack serve --open --mode development --entry ./_build/default/src/output/src/ReactApp.js"
   },
   "dependencies": {
-    "@rescript/react": "^0.10.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "reason-react": "^0.9.1"
   },
   "devDependencies": {
     "webpack": "^5.73.0",

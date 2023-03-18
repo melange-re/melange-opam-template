@@ -1,8 +1,6 @@
-(lang dune 3.1)
+(lang dune 3.8)
 
-(using directory-targets 0.1)
-
-(generate_opam_files true)
+(using melange 0.1)
 
 (name melange-opam-template)
 
@@ -20,17 +18,4 @@
  (allow_empty)
  (name melange-opam-template)
  (synopsis "Melange project")
- (description "Minimal melange project")
- (depends
-  (ocaml
-   (and
-    (>= "4.14.0")
-    (< "4.15.0")))
-  (reason
-   (and
-    (>= "3.8.2")
-    (< "4.0.0")))
-  mel
-  melange
-  (ocaml-lsp-server :dev)
-  (dot-merlin-reader :dev)))
+ (description "Minimal melange project"))

@@ -37,12 +37,11 @@ jobs:
         run: make install
 
       - name: Build basic template
-        run: opam exec -- mel
+        run: make build
 
-      - name: Bundle JS app
+      - name: Bundle React app
         run: npm run bundle
 
-      - name: Run resulting .js files
+      - name: Run Node app
         run: |
-          node _build/default/src/Hello.bs.js
-          node _build/default/src/Main.bs.js
+          node _build/default/src/node/src/Hello.js

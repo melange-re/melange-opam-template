@@ -1,1 +1,1 @@
-let () = print_endline "Hello melange!!"
+let () = Js.log ("Hello " ^ World.name ^ "!!")

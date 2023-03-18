@@ -1,7 +1,6 @@
 project_name = melange-opam-template
 
 DUNE = opam exec -- dune
-MEL = opam exec -- mel
 
 .DEFAULT_GOAL := help
 
@@ -14,7 +13,7 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . -y --deps-only
+	opam switch create . 4.14.1 -y --deps-only
 
 .PHONY: init
 init: create-switch install ## Configure everything to develop this repository in local
@@ -22,13 +21,17 @@ init: create-switch install ## Configure everything to develop this repository i
 .PHONY: install
 install: ## Install development dependencies
 	npm install
+	opam update
 	opam install -y . --deps-only
 	opam pin -y add $(project_name).dev .
-	rm -rf node_modules/melange && ln -sfn $$(opam var melange:lib)/runtime node_modules/melange
 
 .PHONY: build
 build: ## Build the project
-	$(MEL) build
+	$(DUNE) build @react @node
+
+.PHONY: build_verbose
+build_verbose: ## Build the project
+	$(DUNE) build --verbose @react @node
 
 .PHONY: serve
 serve: ## Serve the application with a local HTTP server
@@ -40,7 +43,7 @@ bundle: ## Bundle the JavaScript application
 
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files
-	$(MEL) clean
+	$(DUNE) clean
 
 .PHONY: format
 format: ## Format the codebase with ocamlformat
@@ -52,4 +55,4 @@ format-check: ## Checks if format is correct
 
 .PHONY: watch
 watch: ## Watch for the filesystem and rebuild on every change
-	$(MEL) build --watch
+	$(DUNE) build --watch @react @node
