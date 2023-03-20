@@ -8,5 +8,4 @@
   (library
    (name reason_react)
    (wrapped false)
-   (melange.compile_flags :standard -bs-jsx 3)
    (modes melange))))
