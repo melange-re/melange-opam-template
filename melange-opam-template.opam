@@ -12,13 +12,15 @@ depends: [
   "dune" {dev}
   "melange-compiler-libs" {dev}
   "melange" {dev}
+  "reactjs-jsx-ppx" {dev}
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
   "odoc" {with-doc}
 ]
 dev-repo: "git+https://github.com/your/project.git"
 pin-depends: [
-  [ "dune.dev" "git+https://github.com/ocaml/dune.git#988634c6c4a6a24c81fca523c59ff17a7467e193" ]
-  [ "melange-compiler-libs.dev" "git+https://github.com/melange-re/melange-compiler-libs.git#48ff923f2c25136de8ab96678f623f54cdac438c" ]
-  [ "melange.dev" "git+https://github.com/melange-re/melange.git#47a2971b65d5abf996457bdcc9fc483bdb9551e6" ]
+  [ "dune.dev" "git+https://github.com/ocaml/dune.git#4245029f2914bcfdca915e9916a5155a0afa95fb" ]
+  [ "melange-compiler-libs.dev" "git+https://github.com/melange-re/melange-compiler-libs.git#7263bea2285499f5da857f2bb374345a5178791e" ]
+  [ "melange.dev" "git+https://github.com/melange-re/melange.git#68c6eff82ed056feed809d6cc82558e8697b965b" ]
+  [ "reactjs-jsx-ppx.dev" "git+https://github.com/melange-re/melange.git#68c6eff82ed056feed809d6cc82558e8697b965b" ]
 ]
