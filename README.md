@@ -18,7 +18,7 @@ make serve
 ### React
 
 React support is provided by
-[`@rescript/react`](https://github.com/rescript-lang/rescript-react). The entry
+[`reason-react`](https://github.com/reasonml/reason-react/). The entry
 point of the sample React app is [`src/ReactApp.re`](src/ReactApp.re).
 
 ## Commands
