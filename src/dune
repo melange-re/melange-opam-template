@@ -4,7 +4,7 @@
  (libraries melange reason_react world)
  (modules :standard \ hello)
  (preprocess
-  (pps reactjs-jsx-ppx))
+  (pps reactjs-jsx-ppx melange.ppx))
  (module_systems es6))
 
 (melange.emit
