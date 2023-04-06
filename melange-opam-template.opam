@@ -19,8 +19,8 @@ depends: [
 ]
 dev-repo: "git+https://github.com/your/project.git"
 pin-depends: [
-  [ "dune.dev" "git+https://github.com/ocaml/dune.git#4245029f2914bcfdca915e9916a5155a0afa95fb" ]
+  [ "dune.dev" "git+https://github.com/ocaml/dune.git#66573762f28b84268cf04c3c46d0deaef9945316" ]
   [ "melange-compiler-libs.dev" "git+https://github.com/melange-re/melange-compiler-libs.git#7263bea2285499f5da857f2bb374345a5178791e" ]
-  [ "melange.dev" "git+https://github.com/melange-re/melange.git#68c6eff82ed056feed809d6cc82558e8697b965b" ]
-  [ "reactjs-jsx-ppx.dev" "git+https://github.com/melange-re/melange.git#68c6eff82ed056feed809d6cc82558e8697b965b" ]
+  [ "melange.dev" "git+https://github.com/melange-re/melange.git#4df18aaa5468391c4b190ebc5d4c3ba38698a565" ]
+  [ "reactjs-jsx-ppx.dev" "git+https://github.com/melange-re/melange.git#4df18aaa5468391c4b190ebc5d4c3ba38698a565" ]
 ]
