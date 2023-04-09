@@ -1,11 +1,12 @@
 (subdir
  node_modules
  (dirs reason-react)
- (vendored_dirs reason-react)
+ (data_only_dirs reason-react)
  (subdir
   reason-react/src
   (include_subdirs unqualified)
   (library
    (name reason_react)
    (wrapped false)
-   (modes melange))))
+   (modes melange)
+   (flags -w -9-27-32-20))))
