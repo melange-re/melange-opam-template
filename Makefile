@@ -1,5 +1,3 @@
-project_name = melange-opam-template
-
 DUNE = opam exec -- dune
 
 .DEFAULT_GOAL := help
@@ -23,7 +21,7 @@ install: ## Install development dependencies
 	npm install --legacy-peer-deps
 	opam update
 	opam install -y . --deps-only
-	opam pin -y add $(project_name).dev .
+	opam pin add -y reason-react "https://github.com/reasonml/reason-react.git#1c36c3c5cf3f6dc1170b0549d2dee8d247a6171b"
 
 .PHONY: build
 build: ## Build the project
