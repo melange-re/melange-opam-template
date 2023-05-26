@@ -9,4 +9,6 @@
    (name reason_react)
    (wrapped false)
    (modes melange)
-   (flags -w -9-27-32-20))))
+   (flags -w -9-27-32-20)
+   (preprocess
+    (pps melange.ppx reactjs-jsx-ppx)))))
