@@ -40,7 +40,7 @@ for projects on any JavaScript platform - not just the browser.
 
 The template includes two `melange.emit` stanza for two separate apps. This
 stanza tells Dune to generate JavaScript files using Melange, and specifies in
-which folder the JavaScript files should be placed, by leverating the `target`
+which folder the JavaScript files should be placed, by leveraging the `target`
 field:
 - The React app JavaScript files will be placed in `_build/default/src/output/*`.
 - The NodeJS app JavaScript files will be placed in `_build/default/src/node/*`.
