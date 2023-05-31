@@ -22,5 +22,5 @@ pin-depends: [
   [ "dune.dev" "git+https://github.com/ocaml/dune.git#66573762f28b84268cf04c3c46d0deaef9945316" ]
   [ "melange.dev" "git+https://github.com/melange-re/melange.git#ff0ca826c7b2175ff9208f626c68d960cfcdfcd3" ]
   [ "reactjs-jsx-ppx.dev" "git+https://github.com/melange-re/melange.git#ff0ca826c7b2175ff9208f626c68d960cfcdfcd3" ]
-  [ "reason-react.dev" "git+https://github.com/jchavarri/reason-react.git#d5a5e209817ef9abf7c51a287172870e5cb76643" ]
+  [ "reason-react.dev" "git+https://github.com/jchavarri/reason-react.git#27de44aed71ca4ccc902952e6a3203d663a23bcb" ]
 ]
