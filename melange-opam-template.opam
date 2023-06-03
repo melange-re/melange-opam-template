@@ -10,8 +10,8 @@ depends: [
   "ocaml" {>= "4.14.0" & < "5.0.0"}
   "reason" {>= "3.8.1" & < "4.0.0"}
   "dune" {>= "3.8"}
-  "melange" {dev}
-  "reactjs-jsx-ppx" {dev}
+  "melange" {>= "1.0.0"}
+  "reactjs-jsx-ppx" {>= "1.0.0"}
   "reason-react" {dev}
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
@@ -19,7 +19,5 @@ depends: [
 ]
 dev-repo: "git+https://github.com/your/project.git"
 pin-depends: [
-  [ "melange.dev" "git+https://github.com/melange-re/melange.git#ff0ca826c7b2175ff9208f626c68d960cfcdfcd3" ]
-  [ "reactjs-jsx-ppx.dev" "git+https://github.com/melange-re/melange.git#ff0ca826c7b2175ff9208f626c68d960cfcdfcd3" ]
   [ "reason-react.dev" "git+https://github.com/reasonml/reason-react.git#97d31755c8d24fab13d6b60a3980505c917c1244" ]
 ]
