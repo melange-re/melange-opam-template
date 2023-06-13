@@ -12,12 +12,9 @@ depends: [
   "dune" {>= "3.8"}
   "melange" {>= "1.0.0"}
   "reactjs-jsx-ppx" {>= "1.0.0"}
-  "reason-react" {dev}
+  "reason-react" {>= "0.11.0"}
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
   "odoc" {with-doc}
 ]
 dev-repo: "git+https://github.com/your/project.git"
-pin-depends: [
-  [ "reason-react.dev" "git+https://github.com/reasonml/reason-react.git#97d31755c8d24fab13d6b60a3980505c917c1244" ]
-]
