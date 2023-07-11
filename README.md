@@ -15,6 +15,17 @@ make watch
 make serve
 ```
 
+When running `make init`, you may encounter an error like this:
+
+```
+[ERROR] Could not determine which packages to install for this switch:
+  * Missing dependency:
+    - melange >= 1.0.0
+    no matching version
+```
+
+To address this, first run `opam update`, then rerun `make init`.
+
 ### React
 
 React support is provided by
