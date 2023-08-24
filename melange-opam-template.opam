@@ -13,8 +13,8 @@ depends: [
   "melange" {>= "1.0.0"}
   "reactjs-jsx-ppx" {>= "1.0.0"}
   "reason-react" {>= "0.11.0"}
-  "ocaml-lsp-server" {dev}
-  "dot-merlin-reader" {dev}
+  "ocaml-lsp-server" {with-dev-setup}
+  "dot-merlin-reader" {with-dev-setup}
   "odoc" {with-doc}
 ]
 dev-repo: "git+https://github.com/your/project.git"
