@@ -1,7 +1,7 @@
 {
   "scripts": {
     "bundle": "webpack --mode production --entry ./_build/default/src/output/src/ReactApp.js",
-    "serve": "webpack serve --open --mode development --entry ./_build/default/src/output/src/ReactApp.js"
+    "serve": "webpack serve --allowed-hosts all --open --mode development --entry ./_build/default/src/output/src/ReactApp.js"
   },
   "dependencies": {
     "react": "^17.0.0",

@@ -9,8 +9,13 @@ bug-reports: "https://github.com/your/project/issues"
 depends: [
   "ocaml" {>= "5.1.0"}
   "reason" {>= "3.10.0"}
-  "dune" {>= "3.8"}
+  "dune" {= "3.11.0+merlin-reader"}
   "melange" {>= "2.0.0"}
+  "mlx"
+  "ocamlformat"
+  "ocamlformat-mlx-lib"
+  "ocamlformat-mlx"
+  "ocamlmerlin-mlx"
   "reason-react" {>= "0.13.0"}
   "reason-react-ppx"
   "opam-check-npm-deps" {with-test} # todo: use with-dev-setup once opam 2.2 is out
