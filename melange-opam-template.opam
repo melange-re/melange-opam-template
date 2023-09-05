@@ -7,7 +7,7 @@ license: "MIT"
 homepage: "https://github.com/your/project"
 bug-reports: "https://github.com/your/project/issues"
 depends: [
-  "ocaml" {>= "4.14.0" & < "5.0.0"}
+  "ocaml" {>= "5.1"}
   "reason" {>= "3.8.1" & < "4.0.0"}
   "dune" {>= "3.8"}
   "melange" {>= "1.0.0"}
