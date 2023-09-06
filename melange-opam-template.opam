@@ -13,6 +13,7 @@ depends: [
   "melange-compiler-libs" {dev}
   "melange" {dev}
   "reactjs-jsx-ppx" {dev}
+  "opam-check-npm-deps" {dev} # todo: use with-dev-setup once 2.2 is out
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
   "odoc" {with-doc}
