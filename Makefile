@@ -24,7 +24,7 @@ install: ## Install development dependencies
 	opam update
 	opam install -y . --deps-only
 	opam pin -y add $(project_name).dev .
-	opam-check-npm-deps
+	opam exec opam-check-npm-deps
 
 .PHONY: build
 build: ## Build the project
