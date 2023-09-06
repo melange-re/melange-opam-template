@@ -1,7 +1,7 @@
 (melange.emit
  (target output)
  (alias react)
- (libraries melange reason_react world)
+ (libraries reason-react world)
  (modules :standard \ hello)
  (preprocess
   (pps reactjs-jsx-ppx))

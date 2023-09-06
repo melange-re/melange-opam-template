@@ -15,6 +15,17 @@ make watch
 make serve
 ```
 
+When running `make init`, you may encounter an error like this:
+
+```
+[ERROR] Could not determine which packages to install for this switch:
+  * Missing dependency:
+    - melange >= 1.0.0
+    no matching version
+```
+
+To address this, first run `opam update`, then rerun `make init`.
+
 ### React
 
 React support is provided by
@@ -40,7 +51,7 @@ for projects on any JavaScript platform - not just the browser.
 
 The template includes two `melange.emit` stanza for two separate apps. This
 stanza tells Dune to generate JavaScript files using Melange, and specifies in
-which folder the JavaScript files should be placed, by leverating the `target`
+which folder the JavaScript files should be placed, by leveraging the `target`
 field:
 - The React app JavaScript files will be placed in `_build/default/src/output/*`.
 - The NodeJS app JavaScript files will be placed in `_build/default/src/node/*`.
