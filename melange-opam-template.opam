@@ -8,13 +8,17 @@ homepage: "https://github.com/your/project"
 bug-reports: "https://github.com/your/project/issues"
 depends: [
   "ocaml" {>= "5.1"}
-  "reason" {>= "3.8.1" & < "4.0.0"}
+  "reason" {>= "3.10.0"}
   "dune" {>= "3.8"}
-  "melange" {>= "1.0.0"}
-  "reactjs-jsx-ppx" {>= "1.0.0"}
-  "reason-react" {>= "0.11.0"}
+  "melange" {>= "2.0.0"}
+  "reason-react" {>= "0.12.0"}
+  "reason-react-ppx"
   "ocaml-lsp-server" {dev}
   "dot-merlin-reader" {dev}
   "odoc" {with-doc}
 ]
 dev-repo: "git+https://github.com/your/project.git"
+pin-depends: [
+  [ "reason-react.dev"      "git+https://github.com/reasonml/reason-react.git#2e99c8ee87cefe241b698c191c74226da54cf9db" ]
+  [ "reason-react-ppx.dev"  "git+https://github.com/reasonml/reason-react.git#2e99c8ee87cefe241b698c191c74226da54cf9db" ]
+]
