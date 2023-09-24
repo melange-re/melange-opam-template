@@ -13,17 +13,16 @@ help: ## Print this help message
 
 .PHONY: create-switch
 create-switch: ## Create opam switch
-	opam switch create . 5.1.0 --deps-only -y
+	opam switch create . 5.1.0 -y --deps-only
 
 .PHONY: init
 init: create-switch install ## Configure everything to develop this repository in local
 
 .PHONY: install
 install: ## Install development dependencies
-	npm install --legacy-peer-deps
+	npm install
 	opam update
-	opam install -y . --deps-only
-	opam pin -y add $(project_name).dev .
+	opam install -y . --deps-only --with-test
 	opam exec opam-check-npm-deps
 
 .PHONY: build
