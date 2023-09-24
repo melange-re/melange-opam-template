@@ -12,7 +12,10 @@
  ; by calling `dune build @react`
  (alias react)
 
- ; Dune will generate rules to generate JavaScript targets from the libraries sources as well
+ ; Here's the list of dependencies of the stanza. In this case (being `melange.emit`),
+ ; Dune will look into those dependencies and generate rules with JavaScript targets
+ ; for the modules in those libraries as well.
+ ; Caveat: the libraries need to be specified with `(modes melange)`.
  (libraries reason-react world)
 
  ; By default, Dune will include all modules in the folder to the targets. With `modules` field
