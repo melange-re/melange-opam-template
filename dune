@@ -1,5 +1,12 @@
-;; we start by ignoring node_modules. if you need to consume an OCaml 
-;; project from `node_modules`, this should work:
+;; `dirs` is a stanza to tell dune which subfolders from the current folder
+;; (where the `dune` file is) it should process.
+;; `:standard` is part of Dune's predicate language: https://dune.readthedocs.io/en/stable/reference/predicate-language.html#predicate-language
+;; In the case of `dirs` stanza, `:standard` means "Process all subdirs, except those starting with underscore"
+;; `\` operator will exclude the next value defined set.
+
+;; With that in mind, we start by ignoring `node_modules`, because in most cases
+;; there should be no `dune` files to be processed there by Dune.
+;; If you need to consume an OCaml project from `node_modules`, this should work:
 ;; - remove the `dirs` stanza below
 ;; - add a `(subdir node_modules (dirs only_your_package))`
 (dirs :standard \ node_modules)
