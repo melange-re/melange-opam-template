@@ -9,7 +9,8 @@
  (target output)
 
  ; The `alias` field can be used later on to build just the artifacts from this `melange.emit`
- ; by calling `dune build @react`
+ ; by calling `dune build @react`.
+ ; Note that if no `alias` field is defined, a default `melange` alias will be used instead.
  (alias react)
 
  ; Here's the list of dependencies of the stanza. In this case (being `melange.emit`),
