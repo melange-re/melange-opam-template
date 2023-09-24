@@ -20,14 +20,15 @@ init: create-switch install ## Configure everything to develop this repository i
 
 .PHONY: install
 install: ## Install development dependencies
-	npm install
-	opam update
-	opam install -y . --deps-only --with-test
-	opam exec opam-check-npm-deps
+	npm install # install JavaScript packages that the project might depend on, like `react` or `react-dom`
+	opam update # make sure that opam has the latest information about published libraries in the opam repository https://opam.ocaml.org/packages/
+	opam install -y . --deps-only --with-test # install the Melange and OCaml dependencies
+	opam exec opam-check-npm-deps # check that the versions of the JavaScript packages installed match the requirements defined by Melange libraries
 
 .PHONY: build
 build: ## Build the project
-	$(DUNE) build @react @node
+	$(DUNE) build @react @node # @react and @node are dune aliases: https://dune.readthedocs.io/en/stable/overview.html#term-alias
+  # Another way to build the project would be just calling `dune build`, which will build the `@@default` alias: https://dune.readthedocs.io/en/stable/reference/aliases.html#default
 
 .PHONY: build_verbose
 build_verbose: ## Build the project

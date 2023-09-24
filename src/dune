@@ -1,10 +1,28 @@
+;; `melange.emit` is a Dune stanza that will produce build rules to generate
+;; JavaScript files from sources using the Melange compiler
+;; https://dune.readthedocs.io/en/stable/melange.html#melange-emit
 (melange.emit
+
+ ;; The `target` field is used by Dune to put all JavaScript artifacts in a specific folder inside `_build/default`
+ ;; This field `target` allows to have multiple `melange.emit` stanzas in the `dune` file
+ ;; if, for example, we want to produce ES6 and CommonJS output from the same sources.
  (target output)
+
+ ;; The `alias` field can be used later on to build just the artifacts from this `melange.emit`
+ ;; by calling `dune build @react`
  (alias react)
+
+ ;; Dune will generate rules to generate JavaScript targets from the libraries sources as well
  (libraries reason-react world)
+
+ ;; By default, Dune will include all modules in the folder to the targets. With `modules` field
+ ;; we can tweak this default behavior by excluding `hello` from the list of targets of this stanza.
+ ;; See https://dune.readthedocs.io/en/stable/reference/predicate-language.html#predicate-language
  (modules :standard \ hello)
+
  (preprocess
   (pps melange.ppx reason-react-ppx))
+
  (module_systems es6))
 
 (melange.emit
