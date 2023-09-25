@@ -51,16 +51,24 @@ jobs:
 
       - name: Deploy React app (preview)
         if: github.event_name == 'pull_request'
+        id: preview-deploy
         run: |
           npm install --global vercel@latest
           vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
           vercel build --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
-          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} # deploy project artifacts to vercel
+          echo "URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} | tail -n 1)" >> $GITHUB_OUTPUT
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        if: github.event_name == 'pull_request'
+        with:
+          message: |
+            Preview URL ${{ steps.preview-deploy.outputs.URL }}
+          comment_tag: execution
    
       - name: Deploy React app (production)
         if: github.event_name != 'pull_request'
         run: |
           npm install --global vercel@latest
           vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
-          vercel build --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
-          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} # deploy project artifacts to vercel
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }} # deploy project artifacts to vercel
