@@ -1,8 +1,11 @@
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   pull_request:
   push:
-   branches:
-     - main
+    branches:
+      - main
   schedule:
     # Prime the caches every Monday
     - cron: 0 1 * * MON
@@ -39,9 +42,25 @@ jobs:
       - name: Build basic template
         run: make build
 
-      - name: Bundle React app
-        run: npm run bundle
-
       - name: Run Node app
         run: |
           node _build/default/src/node/src/Hello.js
+
+      - name: Bundle React app
+        run: npm run bundle
+
+      - name: Deploy React app (preview)
+        if: github.event_name == 'pull_request'
+        run: |
+          npm install --global vercel@latest
+          vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
+          vercel build --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} # deploy project artifacts to vercel
+   
+      - name: Deploy React app (production)
+        if: github.event_name != 'pull_request'
+        run: |
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
+          vercel build --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} # deploy project artifacts to vercel
