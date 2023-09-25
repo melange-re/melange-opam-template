@@ -50,23 +50,24 @@ jobs:
         run: npm run bundle
 
       - name: Deploy React app (preview)
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && matrix.os == 'ubuntu-latest'
         id: preview-deploy
         run: |
           npm install --global vercel@latest
           vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
           vercel build --token=${{ secrets.VERCEL_TOKEN }} # build project artifacts
           echo "URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} | tail -n 1)" >> $GITHUB_OUTPUT
+
       - name: Comment PR
         uses: thollander/actions-comment-pull-request@v2
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && matrix.os == 'ubuntu-latest'
         with:
           message: |
             Preview URL ${{ steps.preview-deploy.outputs.URL }}
           comment_tag: execution
    
       - name: Deploy React app (production)
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && matrix.os == 'ubuntu-latest'
         run: |
           npm install --global vercel@latest
           vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} # pull vercel environment information
