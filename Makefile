@@ -23,6 +23,10 @@ install: ## Install development dependencies
 	npm install # install JavaScript packages that the project might depend on, like `react` or `react-dom`
 	opam update # make sure that opam has the latest information about published libraries in the opam repository https://opam.ocaml.org/packages/
 	opam install -y . --deps-only --with-test # install the Melange and OCaml dependencies
+# Temporal pins
+	opam pin reason-react-ppx.dev "git+https://github.com/reasonml/reason-react.git#0e5ab99a4b4935cef07bb6a93da467fe745d3f90" -y
+	opam pin reason-react.dev "git+https://github.com/reasonml/reason-react.git#0e5ab99a4b4935cef07bb6a93da467fe745d3f90" -y
+# Temporal pins
 	opam exec opam-check-npm-deps # check that the versions of the JavaScript packages installed match the requirements defined by Melange libraries
 
 .PHONY: build
