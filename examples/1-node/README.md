@@ -2,8 +2,8 @@
 
 <br>
 
-This project shows how to create a simple Node.js app with Melange. When executed,
-it will print "Hello world!!" on the console.
+This project shows how to create a simple Node.js app with Melange. When
+executed, it will print "Hello world!!" on the console.
 
 The code in [src/hello.ml](./src/hello.ml) is:
 
@@ -13,7 +13,8 @@ let () = Js.log ("Hello " ^ World.name ^ "!!")
 
 <br>
 
-To set up the environment to work with it, you will need to install opam and node.
+To set up the environment to work with it, you will need to install
+[opam](https://opam.ocaml.org/) and [Node.js](https://nodejs.org/).
 
 After that, run these commands to build the project:
 
