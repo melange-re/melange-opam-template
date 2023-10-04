@@ -1,0 +1,33 @@
+(lang dune 3.8)
+
+(using melange 0.1)
+
+(generate_opam_files true)
+
+(name 2-react)
+
+(license "MIT")
+
+(maintainers <your_name>)
+
+(authors <your_name>)
+
+(homepage https://github.com/your/project)
+
+(bug_reports https://github.com/your/project/issues)
+
+(package
+ (name 2-react)
+ (synopsis "Melange React example")
+ (description "Minimal React example with Melange")
+ (depends
+  (melange
+   (>= "2.0.0"))
+  (reason
+   (>= "3.10.0"))
+  (reason-react
+   (>= "0.13.0"))
+  reason-react-ppx
+  (ocaml-lsp-server :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  (ocamlformat :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  ))

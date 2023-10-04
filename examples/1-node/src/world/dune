@@ -1,0 +1,4 @@
+(library
+ (name world)
+ (public_name 1-node.world)
+ (modes melange))

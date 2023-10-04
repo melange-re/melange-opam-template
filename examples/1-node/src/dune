@@ -3,38 +3,37 @@
 ; https://dune.readthedocs.io/en/stable/melange.html#melange-emit
 (melange.emit
 
+ (package 1-node)
+
  ; The `target` field is used by Dune to put all JavaScript artifacts in a specific folder inside `_build/default`
- ; This field `target` allows to have multiple `melange.emit` stanzas in the `dune` file
+ ; This field is necessary to support having multiple `melange.emit` stanzas in the same `dune` file
  ; if, for example, we want to produce ES6 and CommonJS output from the same sources.
- (target output)
+ (target dist)
 
  ; The `alias` field can be used later on to build just the artifacts from this `melange.emit`
- ; by calling `dune build @react`.
+ ; by calling `dune build @1-node`.
  ; Note that if no `alias` field is defined, a default `melange` alias will be used instead.
- (alias react)
+ (alias 1-node)
 
  ; Here's the list of dependencies of the stanza. In this case (being `melange.emit`),
  ; Dune will look into those dependencies and generate rules with JavaScript targets
  ; for the modules in those libraries as well.
  ; Caveat: the libraries need to be specified with `(modes melange)`.
- (libraries reason-react world)
+ (libraries world)
 
  ; By default, Dune will include all modules in the folder to the targets. With `modules` field
- ; we can tweak this default behavior by excluding `hello` from the list of targets of this stanza.
+ ; we can tweak this default behavior by including or excluding modules from the list of targets of this stanza.
  ; See https://dune.readthedocs.io/en/stable/reference/predicate-language.html#predicate-language
- (modules :standard \ hello)
+ ; (modules :standard \ hello) ; include all modules except `hello`
+ ; (modules hello) ; include `hello`
 
- ; Uncomment the following to copy the generated JavaScript files inside the source tree
- ; (promote (until-clean))
+ ; Copies the generated JavaScript files from dune _build folder to the source tree
+ (promote (until-clean))
 
- (preprocess
-  (pps melange.ppx reason-react-ppx))
-
- (module_systems es6))
-
-(melange.emit
- (target node)
- (alias node)
- (libraries world)
- (modules hello)
  (module_systems commonjs))
+
+(rule
+ (alias runtest)
+ (deps dist/src/hello.js)
+ (targets )
+ (action (run node %{deps})))

@@ -1,3 +1,4 @@
 (library
  (name world)
+ (public_name 2-react.world)
  (modes melange))

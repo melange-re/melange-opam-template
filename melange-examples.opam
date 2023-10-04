@@ -1,0 +1,17 @@
+opam-version: "2.0"
+synopsis: "Melange project"
+description: "Minimal melange project"
+maintainer: ["<your_name>"]
+authors: ["<your_name>"]
+license: "MIT"
+homepage: "https://github.com/your/project"
+bug-reports: "https://github.com/your/project/issues"
+depends: [
+  "1-node"
+  "2-react"
+]
+dev-repo: "git+https://github.com/your/project.git"
+pin-depends: [
+  "1-node.dev" "./examples/1-node"
+  "2-react.dev" "./examples/2-react"
+]

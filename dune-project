@@ -2,7 +2,7 @@
 
 (using melange 0.1)
 
-(name melange-opam-template)
+(name melange-examples)
 
 (license "MIT")
 
@@ -16,6 +16,6 @@
 
 (package
  (allow_empty)
- (name melange-opam-template)
- (synopsis "Melange project")
- (description "Minimal melange project"))
+ (name melange-examples)
+ (synopsis "Melange examples")
+ (description "A collection of examples and demo projects using Melange"))

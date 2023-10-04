@@ -36,11 +36,11 @@ jobs:
       - name: Install all deps
         run: make install
 
-      - name: Build basic template
+      - name: Build all examples
         run: make build
 
       - name: Bundle React app
-        run: npm run bundle
+        run: make -C examples/2-react bundle
 
       - name: Run Node app
         run: |

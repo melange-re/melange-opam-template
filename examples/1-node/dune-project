@@ -1,0 +1,28 @@
+(lang dune 3.8)
+
+(using melange 0.1)
+
+(generate_opam_files true)
+
+(name 1-node)
+
+(license "MIT")
+
+(maintainers <your_name>)
+
+(authors <your_name>)
+
+(homepage https://github.com/your/project)
+
+(bug_reports https://github.com/your/project/issues)
+
+(package
+ (name 1-node)
+ (synopsis "Melange Node.js example")
+ (description "Minimal Node.js example with Melange")
+ (depends
+  (melange
+   (>= "2.0.0"))
+  (ocaml-lsp-server :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  (ocamlformat :with-test) ; todo: use with-dev-setup once opam 2.2 is out
+  ))

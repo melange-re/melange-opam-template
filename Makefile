@@ -1,4 +1,9 @@
-project_name = melange-opam-template
+# !!! Only for contributors & maintainers !!!
+# The commands in this file are only necessary to maintain the repository examples
+# Each example project in `./examples` contains its own Makefile with specific
+# commands for it.
+
+project_name = melange-examples
 
 DUNE = opam exec -- dune
 
@@ -20,40 +25,10 @@ init: create-switch install ## Configure everything to develop this repository i
 
 .PHONY: install
 install: ## Install development dependencies
-	npm install # install JavaScript packages that the project might depend on, like `react` or `react-dom`
-	opam update # make sure that opam has the latest information about published libraries in the opam repository https://opam.ocaml.org/packages/
-	opam install -y . --deps-only --with-test # install the Melange and OCaml dependencies
-	opam exec opam-check-npm-deps # check that the versions of the JavaScript packages installed match the requirements defined by Melange libraries
+	make -C examples/1-node install
+	make -C examples/2-react install
 
 .PHONY: build
-build: ## Build the project
-	$(DUNE) build @react @node # @react and @node are dune aliases: https://dune.readthedocs.io/en/stable/overview.html#term-alias
-  # Another way to build the project would be just calling `dune build`, which will build the `@@default` alias: https://dune.readthedocs.io/en/stable/reference/aliases.html#default
-
-.PHONY: build_verbose
-build_verbose: ## Build the project
-	$(DUNE) build --verbose @react @node
-
-.PHONY: serve
-serve: ## Serve the application with a local HTTP server
-	npm run serve
-
-.PHONY: bundle
-bundle: ## Bundle the JavaScript application
-	npm run bundle
-
-.PHONY: clean
-clean: ## Clean build artifacts and other generated files
-	$(DUNE) clean
-
-.PHONY: format
-format: ## Format the codebase with ocamlformat
-	$(DUNE) build @fmt --auto-promote
-
-.PHONY: format-check
-format-check: ## Checks if format is correct
-	$(DUNE) build @fmt
-
-.PHONY: watch
-watch: ## Watch for the filesystem and rebuild on every change
-	$(DUNE) build --watch @react @node
+build: ## Build all examples
+	make -C examples/1-node build
+	make -C examples/2-react build
