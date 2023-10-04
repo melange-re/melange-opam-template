@@ -16,8 +16,8 @@ jobs:
           - macos-latest
           - ubuntu-latest
           # - windows-latest # for some reason windows build is not picking dune 3.5
-        ocaml-compiler:
-          - 5.1.x
+        ocaml-compiler: 5.1.x
+        opam-depext: false
 
       fail-fast: false
     runs-on: ${{ matrix.system }}
