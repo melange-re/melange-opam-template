@@ -24,7 +24,7 @@ When running `make init`, you may encounter an error like this:
     no matching version
 ```
 
-To address this, first run `opam update`, then rerun `make init`.
+Which means `opam` doesn't have the latest packages definitions from the opam-repository. To address this, first run `opam update`, then rerun `make init`.
 
 ### React
 
@@ -33,6 +33,8 @@ React support is provided by
 point of the sample React app is [`src/ReactApp.re`](src/ReactApp.re).
 
 ## Commands
+
+It's common to use a Makefile in opam/dune projects to expose a simpler interface to interact with those tools.
 
 You can see all available commands by running `make help` or just `make`. Here
 are a few of the most useful ones:
@@ -46,7 +48,7 @@ change
 
 ## JavaScript output
 
-Since Melange just compiles source files into JavaScript files, it can be used
+Since Melange compiles source files into JavaScript files, it can be used
 for projects on any JavaScript platform - not just the browser.
 
 The template includes two `melange.emit` stanza for two separate apps. This
