@@ -24,7 +24,7 @@ When running `make init`, you may encounter an error like this:
     no matching version
 ```
 
-Which means `opam` doesn't have the latest packages definitions from the opam-repository. To address this, first run `opam update`, then rerun `make init`.
+It means `opam` doesn't have the latest packages definitions from the opam-repository. To address this, first run `opam update`, then rerun `make init`.
 
 ### React
 
