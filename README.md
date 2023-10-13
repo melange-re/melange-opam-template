@@ -34,7 +34,7 @@ point of the sample React app is [`src/ReactApp.re`](src/ReactApp.re).
 
 ## Commands
 
-It's common to use a Makefile in opam/dune projects to expose a simpler interface to interact with those tools.
+In opam / dune projects, our personal preference is to group commonly used commands in a Makefile. This is completely optional.
 
 You can see all available commands by running `make help` or just `make`. Here
 are a few of the most useful ones:
