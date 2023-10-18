@@ -1,3 +1,6 @@
+; `melange.emit` is a Dune stanza that will produce build rules to generate
+; JavaScript files from sources using the Melange compiler
+; https://dune.readthedocs.io/en/stable/melange.html#melange-emit
 (melange.emit
 
  ; The `target` field is used by Dune to put all JavaScript artifacts in a specific folder inside `_build/default`
