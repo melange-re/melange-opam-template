@@ -1,6 +1,3 @@
-; `melange.emit` is a Dune stanza that will produce build rules to generate
-; JavaScript files from sources using the Melange compiler
-; https://dune.readthedocs.io/en/stable/melange.html#melange-emit
 (melange.emit
 
  ; The `target` field is used by Dune to put all JavaScript artifacts in a specific folder inside `_build/default`
@@ -28,8 +25,12 @@
  ; (promote (until-clean))
 
  (preprocess
+  ; The `pps` field is a list of ppx to apply to the sources before generating JavaScript. melange.ppx allows to use Melange attributes [@mel. ...] (https://melange.re/v2.0.0/communicate-with-javascript/#attributes)
+  ; reason-react-ppx allows to use JSX for ReasonReact components
   (pps melange.ppx reason-react-ppx))
 
+ ;; module_systems is a list of module systems to generate code for (es6, commonjs)
+ ;; Change to (module_systems es6 commonjs) if you want to generate both
  (module_systems es6))
 
 (melange.emit
