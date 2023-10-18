@@ -32,8 +32,9 @@
   ; reason-react-ppx allows to use JSX for ReasonReact components by using the [@JSX] attributes from Reason: https://reasonml.github.io/docs/en/jsx
   (pps melange.ppx reason-react-ppx))
 
- ;; module_systems is a list of module systems to generate code for (es6, commonjs)
- ;; Change to (module_systems es6 commonjs) if you want to generate both
+ ; module_systems is a list of module systems to generate code for (es6, commonjs)
+ ; Change to (module_systems es6 commonjs) if you want to generate both
+ ; https://melange.re/v2.0.0/build-system/#commonjs-or-es6-modules
  (module_systems es6))
 
 (melange.emit
