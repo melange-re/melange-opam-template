@@ -1,0 +1,18 @@
+module App = struct
+  let[@react.component] make () =
+    let items =
+      Array.map
+        (fun greeting -> <h1>(React.string greeting)</h1>)
+        [|
+          "Hello " ^ World.name ^ "!";
+          "This is React with OCaml and .mlx syntax!";
+        |]
+    in
+    React.array items
+end
+
+let () =
+  match ReactDOM.querySelector "#root" with
+  | Some root -> ReactDOM.render <App /> root
+  | None ->
+      Js.Console.error "Failed to start React: couldn't find the #root element"
