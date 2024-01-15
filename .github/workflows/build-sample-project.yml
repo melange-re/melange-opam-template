@@ -34,7 +34,7 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
 
       - name: Install all deps
-        run: npm run install
+        run: npm run install-opam-npm
 
       - name: Build basic template
         run: npm run build
