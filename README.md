@@ -23,7 +23,7 @@ point of the sample React app is [`src/ReactApp.re`](src/ReactApp.re).
 
 ## Commands
 
-All the build commands are defined in the `package.json` `scripts` field. This
+All the build commands are defined in the `scripts` field of `package.json`. This
 is completely optional, and other tools like `make` could be used.
 
 You can see all available commands by running `npm run`. There are explanations
