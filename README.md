@@ -8,23 +8,12 @@ If you are looking for a template with esy, check [melange-esy-template](https:/
 ## Quick Start
 
 ```shell
-make init
+npm run init
 
 # In separate terminals:
-make watch
-make serve
+npm run watch
+npm run serve
 ```
-
-When running `make init`, you may encounter an error like this:
-
-```
-[ERROR] Could not determine which packages to install for this switch:
-  * Missing dependency:
-    - melange >= 1.0.0
-    no matching version
-```
-
-To address this, first run `opam update`, then rerun `make init`.
 
 ### React
 
@@ -34,19 +23,23 @@ point of the sample React app is [`src/ReactApp.re`](src/ReactApp.re).
 
 ## Commands
 
-You can see all available commands by running `make help` or just `make`. Here
-are a few of the most useful ones:
+All the build commands are defined in the `scripts` field of `package.json`. This
+is completely optional, and other tools like `make` could be used.
 
-- `make init`: set up opam local switch and download OCaml, Melange and
+You can see all available commands by running `npm run`. There are explanations
+on each command in the `scriptsComments` field of the `package.json` file.
+Here are a few of the most useful ones:
+
+- `npm run init`: set up opam local switch and download OCaml, Melange and
 JavaScript dependencies
-- `make install`: install OCaml, Melange and JavaScript dependencies
-- `make watch`: watch for the filesystem and have Melange rebuild on every
+- `npm run install-opam-npm`: install OCaml, Melange and JavaScript dependencies
+- `npm run watch`: watch for the filesystem and have Melange rebuild on every
 change
-- `make serve`: serve the application with a local HTTP server
+- `npm run serve`: serve the application with a local HTTP server
 
 ## JavaScript output
 
-Since Melange just compiles source files into JavaScript files, it can be used
+Since Melange compiles source files into JavaScript files, it can be used
 for projects on any JavaScript platform - not just the browser.
 
 The template includes two `melange.emit` stanza for two separate apps. This

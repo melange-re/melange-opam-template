@@ -17,7 +17,7 @@
  ; Dune will look into those dependencies and generate rules with JavaScript targets
  ; for the modules in those libraries as well.
  ; Caveat: the libraries need to be specified with `(modes melange)`.
- (libraries reason-react world)
+ (libraries reason-react world melange.belt)
 
  ; By default, Dune will include all modules in the folder to the targets. With `modules` field
  ; we can tweak this default behavior by excluding `hello` from the list of targets of this stanza.
@@ -28,8 +28,13 @@
  ; (promote (until-clean))
 
  (preprocess
+  ; The `pps` field is a list of ppx to apply to the sources before generating JavaScript. melange.ppx allows to use Melange attributes [@mel. ...] (https://melange.re/v2.0.0/communicate-with-javascript/#attributes)
+  ; reason-react-ppx allows to use JSX for ReasonReact components by using the [@JSX] attributes from Reason: https://reasonml.github.io/docs/en/jsx
   (pps melange.ppx reason-react-ppx))
 
+ ; module_systems is a list of module systems to generate code for (es6, commonjs)
+ ; Change to (module_systems es6 commonjs) if you want to generate both
+ ; https://melange.re/v2.0.0/build-system/#commonjs-or-es6-modules
  (module_systems es6))
 
 (melange.emit
