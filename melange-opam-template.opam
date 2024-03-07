@@ -7,9 +7,9 @@ license: "MIT"
 homepage: "https://github.com/your/project"
 bug-reports: "https://github.com/your/project/issues"
 depends: [
-  "ocaml" {>= "5.1.0"}
+  "ocaml"
   "reason" {>= "3.10.0"}
-  "dune" {>= "3.8"}
+  "dune" {>= "3.9"}
   "melange" {>= "2.0.0"}
   "reason-react" {>= "0.13.0"}
   "reason-react-ppx"
