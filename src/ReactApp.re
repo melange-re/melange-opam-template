@@ -9,10 +9,10 @@ module App = {
     ->React.array;
 };
 
-switch (React.DOM.querySelector("#root")) {
+switch (ReactDOM.querySelector("#root")) {
 | Some(element) =>
-  let root = React.DOM.Client.createRoot(element);
-  React.DOM.Client.render(root, <App />);
+  let root = ReactDOM.Client.createRoot(element);
+  ReactDOM.Client.render(root, <App />);
 | None =>
   Js.Console.error("Failed to start React: couldn't find the #root element")
 };
