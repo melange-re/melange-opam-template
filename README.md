@@ -53,7 +53,7 @@ So for example, [`src/Hello.ml`](src/Hello.ml) (using OCaml syntax) can be run w
 `node`:
 
 ```bash
-node _build/default/src/node/src/Hello.js
+node _build/default/src/node/src/Hello.mjs
 ```
 
 Similarly, `_build/default/src/output/src/ReactApp.js` can be passed as entry to a bundler

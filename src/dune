@@ -42,4 +42,4 @@
  (alias node)
  (libraries world)
  (modules hello)
- (module_systems commonjs))
+ (module_systems (es6 mjs)))
