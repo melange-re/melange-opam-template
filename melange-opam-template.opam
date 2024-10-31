@@ -8,10 +8,10 @@ homepage: "https://github.com/your/project"
 bug-reports: "https://github.com/your/project/issues"
 depends: [
   "ocaml"
-  "reason" {>= "3.10.0"}
+  "reason" {>= "3.13.0"}
   "dune" {>= "3.9"}
-  "melange" {>= "2.0.0"}
-  "reason-react" {>= "0.13.0"}
+  "melange" {>= "4.0.0"}
+  "reason-react" {>= "0.15.0"}
   "reason-react-ppx"
   "opam-check-npm-deps" {with-dev-setup}
   "ocaml-lsp-server" {with-dev-setup}
